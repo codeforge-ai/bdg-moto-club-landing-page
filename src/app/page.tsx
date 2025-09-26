@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomePageContent from "@/app/page-content";
+import HomePageContent from "@/app/home";
 
 export const metadata: Metadata = {
   title: "BDG Moto Club - Aventură, Comunitate, Servicii Moto | România",

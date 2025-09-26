@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ContactUsPageContent from "@/app/inscriere/page-content";
+import ContactUsPageContent from "@/app/inscriere/contact-us";
 
 export const metadata: Metadata = {
   title: "Inscriere | BDG - Club Moto",

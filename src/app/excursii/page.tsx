@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ExcursionsPageContent from "@/app/excursii/page-content";
+import ExcursionsPageClientWrapper from "@/app/excursii/excursions-client-wrapper";
 
 export const metadata: Metadata = {
   title: "Excursii | BDG - Club Moto",
@@ -32,5 +32,5 @@ export const metadata: Metadata = {
 };
 
 export default async function ExcursionsPage() {
-  return <ExcursionsPageContent />;
+  return <ExcursionsPageClientWrapper />;
 }

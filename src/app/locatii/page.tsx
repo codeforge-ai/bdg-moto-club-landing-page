@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import LocationPageContent from "@/app/locatii/page-content";
+import LocationPageClientWrapper from "@/app/locatii/location-client-wrapper";
 
 export const metadata: Metadata = {
   title: "Locații | BDG - Club Moto",
@@ -31,6 +31,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function LocationsPage() {
-  return <LocationPageContent />;
+export default function LocationsPage() {
+  return <LocationPageClientWrapper />;
 }
