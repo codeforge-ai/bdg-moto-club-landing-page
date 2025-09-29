@@ -25,7 +25,7 @@ export function ExcursionsMap({ route }: Props) {
     <div className="h-[500px] w-full">
       <MapContainer
         center={[45.0, 25.5]}
-        zoom={7}
+        zoom={5}
         className="h-full w-full"
         style={{ height: "100%", width: "100%" }}
       >
@@ -33,7 +33,7 @@ export function ExcursionsMap({ route }: Props) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Polyline positions={route} color="#FFD700" weight={4} opacity={0.8} />
+        <Polyline positions={route} color="#001264" weight={4} opacity={0.8} />
       </MapContainer>
     </div>
   );
