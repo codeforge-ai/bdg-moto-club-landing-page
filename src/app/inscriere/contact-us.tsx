@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Check, Star, Users, Calendar, ArrowRight } from "lucide-react";
+import heroImage from "@/shared/assets/relax.jpeg";
 
 const benefits = [
   "Excursii organizate lunar în locații spectaculoase",
@@ -51,18 +52,22 @@ export default function ContactUsPageContent() {
 
   return (
     <>
-      <section className="from-background via-primary/5 to-background bg-linear-to-br pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <section
+        className="from-background via-primary/5 to-background relative h-screen bg-linear-to-br bg-cover bg-center"
+        style={{ backgroundImage: `url('${heroImage.src}')` }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-12 text-center"
+            className="max-w-3xl"
           >
-            <h1 className="text-foreground mb-6 text-5xl font-bold md:text-6xl">
-              Alătură-te <span className="text-primary">Club Moto</span>
+            <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
+              Alătură-te <span className="text-blue-300">Club Moto</span>
             </h1>
-            <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
+            <p className="text-xl text-white/90">
               Începe-ți aventura pe două roți alături de cea mai activă
               comunitate de motocicliști
             </p>
