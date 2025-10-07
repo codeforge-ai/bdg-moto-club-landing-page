@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Parallax } from "react-parallax";
 import { Users, Award, Heart, Bike } from "lucide-react";
 import clubMembers from "@/shared/assets/club-members.jpeg";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
@@ -36,15 +35,12 @@ const values = [
 export default function AboutUsPageContent() {
   return (
     <>
-      <Parallax
-        blur={{ min: -5, max: 5 }}
-        bgImage={heroImage.src}
-        bgImageAlt="Despre Club Moto"
-        strength={-150}
-        className="relative flex h-[70vh] items-center justify-center"
+      <section
+        className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage.src})` }}
       >
-        <div className="parallax-overlay absolute inset-0" />
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,7 +54,7 @@ export default function AboutUsPageContent() {
             </p>
           </motion.div>
         </div>
-      </Parallax>
+      </section>
 
       {/* Story Section */}
       <section className="bg-background py-20">
@@ -111,7 +107,7 @@ export default function AboutUsPageContent() {
                   priority
                 />
               </div>
-              <div className="bg-primary text-primary-foreground absolute -right-6 -bottom-6 rounded-xl px-6 py-4 shadow-lg">
+              <div className="bg-primary text-primary-foreground absolute right-4 bottom-4 max-w-[90%] overflow-hidden rounded-xl px-6 py-4 text-ellipsis whitespace-nowrap shadow-lg md:max-w-[60%] lg:max-w-[50%]">
                 <p className="text-2xl font-bold">150+</p>
                 <p className="text-sm">Membri Activi</p>
               </div>
@@ -166,9 +162,9 @@ export default function AboutUsPageContent() {
         <div className="container mx-auto px-4">
           <div className="grid gap-8 text-center md:grid-cols-4">
             {[
-              { number: "150+", label: "Membri Activi" },
-              { number: "50+", label: "Excursii Organizate" },
-              { number: "8", label: "Ani de Experiență" },
+              { number: "300", label: "Membri" },
+              { number: "50+", label: "Excursii Organizate Anual" },
+              { number: "10", label: "Ani de Experiență" },
               { number: "25K+", label: "Kilometri Parcurși" },
             ].map((stat, index) => (
               <motion.div

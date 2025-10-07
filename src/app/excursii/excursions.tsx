@@ -1,11 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Parallax } from "react-parallax";
 import { Calendar, MapPin, Users, Clock, Star } from "lucide-react";
 import excursionRoute from "@/shared/assets/excursion-route.jpeg";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
 import { ExcursionsMap } from "@/shared/components/excursions-map";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/shared/components/ui/carousel";
+import Image from "next/image";
 
 // Sample route coordinates (Bucharest to Brașov)
 export const routes = [
@@ -257,18 +262,30 @@ const upcomingTrips = [
   },
 ];
 
+const experienceImages = [
+  "2.jpeg",
+  "3.jpeg",
+  "4.jpeg",
+  "5.jpeg",
+  "6.jpeg",
+  "7.jpeg",
+  "8.jpeg",
+  "9.jpeg",
+  "10.jpeg",
+  "11.jpeg",
+  "12.jpeg",
+  "13.jpeg",
+].map((img) => `/experience/${img}`);
+
 export default function ExcursionsPageContent() {
   return (
     <>
-      <Parallax
-        blur={{ min: -5, max: 5 }}
-        bgImage={heroImage.src}
-        bgImageAlt="Excursii Club Moto"
-        strength={-150}
-        className="relative flex h-[70vh] items-center justify-center"
+      <section
+        className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage.src})` }}
       >
-        <div className="parallax-overlay absolute inset-0" />
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -282,7 +299,7 @@ export default function ExcursionsPageContent() {
             </p>
           </motion.div>
         </div>
-      </Parallax>
+      </section>
 
       {/* Upcoming Trips */}
       <section className="bg-background py-20">
@@ -295,7 +312,7 @@ export default function ExcursionsPageContent() {
             className="mb-16 text-center"
           >
             <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
-              Excursii <span className="text-primary">Planificate</span>
+              Excursii Planificate
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
               Alătură-te aventurilor noastre viitoare
@@ -310,42 +327,49 @@ export default function ExcursionsPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="moto-card group overflow-hidden"
+                className="moto-card group flex h-full flex-col justify-between overflow-hidden"
               >
-                <div className="relative mb-4 h-48 overflow-hidden rounded-lg">
-                  {/*<img*/}
-                  {/*  src={trip.image}*/}
-                  {/*  alt={trip.title}*/}
-                  {/*  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"*/}
-                  {/*/>*/}
-                  <div className="bg-primary text-primary-foreground absolute top-4 right-4 rounded-full px-3 py-1 text-sm font-medium">
-                    {trip.difficulty}
+                <div>
+                  <div className="relative mb-4 h-48 overflow-hidden rounded-lg">
+                    <Image
+                      src={trip.image.src}
+                      alt={trip.title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      width={800}
+                      height={192}
+                      priority
+                    />
+                    <div className="bg-primary text-primary-foreground absolute top-4 right-4 rounded-full px-3 py-1 text-sm font-medium">
+                      {trip.difficulty}
+                    </div>
+                  </div>
+
+                  <h3 className="text-foreground mb-3 text-xl font-bold">
+                    {trip.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-2">
+                    {trip.description}
+                  </p>
+
+                  <div className="mb-6 space-y-2">
+                    <div className="text-muted-foreground flex items-center text-sm">
+                      <Calendar className="text-primary mr-2 h-4 w-4" />
+                      {trip.date}
+                    </div>
+                    <div className="text-muted-foreground flex items-center text-sm">
+                      <Clock className="text-primary mr-2 h-4 w-4" />
+                      {trip.duration}
+                    </div>
+                    <div className="text-muted-foreground flex items-center text-sm">
+                      <Users className="text-primary mr-2 h-4 w-4" />
+                      {trip.participants}
+                    </div>
                   </div>
                 </div>
 
-                <h3 className="text-foreground mb-3 text-xl font-bold">
-                  {trip.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">
-                  {trip.description}
-                </p>
-
-                <div className="mb-6 space-y-2">
-                  <div className="text-muted-foreground flex items-center text-sm">
-                    <Calendar className="text-primary mr-2 h-4 w-4" />
-                    {trip.date}
-                  </div>
-                  <div className="text-muted-foreground flex items-center text-sm">
-                    <Clock className="text-primary mr-2 h-4 w-4" />
-                    {trip.duration}
-                  </div>
-                  <div className="text-muted-foreground flex items-center text-sm">
-                    <Users className="text-primary mr-2 h-4 w-4" />
-                    {trip.participants}
-                  </div>
-                </div>
-
-                <button className="moto-button w-full">Înscrie-te</button>
+                <button className="moto-button w-full" disabled>
+                  Înscrie-te
+                </button>
               </motion.div>
             ))}
           </div>
@@ -363,7 +387,7 @@ export default function ExcursionsPageContent() {
             className="mb-12 text-center"
           >
             <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
-              Experiențe <span className="text-primary">Memorabile</span>
+              Experiențe Memorabile
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
               Vezi un rezumat din aventurile noastre recente
@@ -377,23 +401,32 @@ export default function ExcursionsPageContent() {
             viewport={{ once: true }}
             className="mx-auto max-w-4xl"
           >
-            <div className="moto-card overflow-hidden p-0">
-              <div className="bg-muted flex aspect-video items-center justify-center">
-                <div className="text-center">
-                  <div className="bg-primary mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full">
-                    <svg
-                      className="text-primary-foreground ml-1 h-8 w-8"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Video cu ultimele noastre aventuri - în curând disponibil
-                  </p>
-                </div>
-              </div>
+            <Carousel>
+              <CarouselContent>
+                {experienceImages.map((src, idx) => (
+                  <CarouselItem key={idx}>
+                    <div className="moto-card overflow-hidden p-0">
+                      <div className="bg-muted flex aspect-video items-center justify-center">
+                        <Image
+                          src={src}
+                          alt={`Experiență ${idx + 1}`}
+                          className="h-full w-full object-cover"
+                          width={1000}
+                          height={800}
+                          priority={idx === 0}
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {/*<CarouselPrevious />*/}
+              {/*<CarouselNext />*/}
+            </Carousel>
+            <div className="mt-4 text-center">
+              <span className="bg-primary text-primary-foreground inline-block rounded px-4 py-2 text-base font-semibold">
+                Turul Transalpina & Transfăgărășan Tour Sep 2025
+              </span>
             </div>
           </motion.div>
         </div>
@@ -428,7 +461,7 @@ export default function ExcursionsPageContent() {
                 className="moto-card overflow-hidden p-0"
               >
                 <ExcursionsMap route={r.route as []} />
-                <div className="bg-muted/50 p-6">
+                <div className="bg-muted/50 h-full p-6">
                   <h3 className="text-foreground mb-2 text-lg font-bold">
                     {r.title}
                   </h3>

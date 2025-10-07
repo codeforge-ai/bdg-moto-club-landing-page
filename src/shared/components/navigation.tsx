@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
-import clubLogo from "@/shared/assets/club-logo.png";
+import clubLogo from "@/shared/assets/logo.png";
 
 const menuItems = [
   { href: "/", label: "Acasă" },
@@ -25,25 +25,23 @@ export function Navigation() {
   }
 
   return (
-    <nav className="bg-background/95 border-muted fixed top-0 right-0 left-0 z-50 border-b backdrop-blur-md">
+    <nav className="bg-background/95 border-muted fixed top-0 right-0 left-0 z-[9999] border-b backdrop-blur-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/public" className="group flex items-center space-x-3">
-            <div className="bg-primary h-12 w-12 rounded-full p-2 transition-transform duration-300 group-hover:scale-110">
-              <Image
-                src={clubLogo.src}
-                alt="Club Moto"
-                className="h-full w-full object-contain"
-                width={48}
-                height={48}
-                priority
-              />
-            </div>
+          <Link href="/" className="group flex items-center space-x-3">
+            <Image
+              src={clubLogo.src}
+              alt="Club Moto"
+              width={45}
+              height={50}
+              className="h-full w-full max-w-[45px] object-contain"
+              priority
+            />
             <div className="hidden sm:block">
-              <h1 className="text-foreground text-2xl font-bold">Club Moto</h1>
+              <h1 className="text-foreground text-2xl font-bold">BDG MC</h1>
               <p className="text-muted-foreground text-xs">
-                Aventura pe două roți
+                Despre pasiunea pentru moto
               </p>
             </div>
           </Link>

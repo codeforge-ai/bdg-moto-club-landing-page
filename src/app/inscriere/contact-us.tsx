@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Check, Star, Users, Calendar, ArrowRight } from "lucide-react";
 import heroImage from "@/shared/assets/relax.jpeg";
+import { submitFormspree } from "@/shared/lib/utils";
 
 const benefits = [
   "Excursii organizate lunar în locații spectaculoase",
@@ -27,8 +28,11 @@ export default function ContactUsPageContent() {
     message: "",
   });
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
+    await submitFormspree(formData);
+
     toast("Îți vom răspunde în cel mult 24 de ore.");
     // Reset form
     setFormData({
@@ -111,7 +115,7 @@ export default function ContactUsPageContent() {
               <div className="border-muted grid grid-cols-3 gap-4 border-t pt-6">
                 <div className="text-center">
                   <div className="text-primary mb-1 text-2xl font-bold">
-                    150+
+                    300
                   </div>
                   <div className="text-muted-foreground text-sm">Membri</div>
                 </div>
@@ -122,7 +126,7 @@ export default function ContactUsPageContent() {
                   <div className="text-muted-foreground text-sm">Excursii</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-primary mb-1 text-2xl font-bold">8</div>
+                  <div className="text-primary mb-1 text-2xl font-bold">10</div>
                   <div className="text-muted-foreground text-sm">Ani</div>
                 </div>
               </div>
@@ -138,7 +142,7 @@ export default function ContactUsPageContent() {
           >
             <div className="moto-card">
               <h2 className="text-foreground mb-6 text-3xl font-bold">
-                Formular de <span className="text-primary">Înscriere</span>
+                Formular de Înscriere
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -230,7 +234,7 @@ export default function ContactUsPageContent() {
                     name="experience"
                     value={formData.experience}
                     onChange={handleChange}
-                    className="border-muted focus:ring-primary bg-background text-foreground w-full rounded-lg border px-4 py-3 focus:border-transparent focus:ring-2"
+                    className="!focus:ring-2 !border-muted !focus:ring-primary !bg-background !text-foreground !w-full !rounded-lg !border !px-4 !py-3 focus:border-transparent"
                   >
                     <option value="">Selectează nivelul de experiență</option>
                     <option value="incepator">Începător (0-1 an)</option>

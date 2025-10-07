@@ -95,6 +95,12 @@
     /*@apply shadow-(--shadow-glow) hover:shadow-(--shadow-glow);*/
     /*transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);*/
 }
+.moto-button:disabled,
+.moto-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
 @utility moto-card {
     @apply bg-card rounded-xl p-6 shadow-(--shadow-elegant);
     /*@apply hover:shadow-(--shadow-glow) hover:scale-[1.02];*/
@@ -208,6 +214,10 @@ All colors MUST be HSL.
         --sidebar-border: 240 3.7% 15.9%;
         --sidebar-ring: 217.2 91.2% 59.8%;
     }
+}
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
 }
 
 @layer base {

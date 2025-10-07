@@ -2,37 +2,34 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Parallax } from "react-parallax";
 import { ArrowRight, MapPin, Calendar, Users } from "lucide-react";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
 
 export default function HomePageContent() {
   return (
     <>
-      <Parallax
-        blur={{ min: -15, max: 15 }}
-        bgImage={heroImage.src}
-        bgImageAlt="Club Moto Hero"
-        strength={-200}
-        className="hero-section"
+      <section
+        className="hero-section relative flex min-h-screen w-full items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage.src})` }}
       >
-        <div className="parallax-overlay absolute inset-0" />
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="py-4"
           >
-            <h1 className="hero-title mb-6">Club Moto</h1>
+            <h1 className="hero-title mb-6">BDG MC</h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
               className="mx-auto mb-8 max-w-2xl text-xl font-medium text-white/90 md:text-2xl"
             >
-              Alătură-te comunității pasionaților de motociclete. Aventură,
-              prietenie și drumuri de neuitat.
+              Despre pasiunea pentru moto, timp liber si lifestyle. Promovam
+              simplitatea si placerea comuna pentru moto, indiferent de varsta.
+              Alatura-te si tu!
             </motion.p>
 
             <motion.div
@@ -54,7 +51,7 @@ export default function HomePageContent() {
             </motion.div>
           </motion.div>
         </div>
-      </Parallax>
+      </section>
 
       {/* Features Section */}
       <section className="bg-background py-20">
