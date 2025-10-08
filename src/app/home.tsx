@@ -5,6 +5,9 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Calendar, Users } from "lucide-react";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
 
+import Image from "next/image";
+import clubLogo from "@/shared/assets/logo.png";
+
 export default function HomePageContent() {
   return (
     <>
@@ -20,7 +23,15 @@ export default function HomePageContent() {
             transition={{ duration: 1, delay: 0.3 }}
             className="py-4"
           >
-            <h1 className="hero-title mb-6">BDG MC</h1>
+            <div className="mx-auto mb-6 flex h-40 w-40 items-center justify-center rounded-full bg-gray-300 shadow-lg">
+              <Image
+                src={clubLogo.src}
+                alt="Club Moto Logo"
+                className="hero-logo"
+                width={120}
+                height={120}
+              />
+            </div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

@@ -5,12 +5,8 @@ import { Calendar, MapPin, Users, Clock, Star } from "lucide-react";
 import excursionRoute from "@/shared/assets/excursion-route.jpeg";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
 import { ExcursionsMap } from "@/shared/components/excursions-map";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/shared/components/ui/carousel";
 import Image from "next/image";
+import { ImageCarousel } from "@/shared/components/image-carousel";
 
 // Sample route coordinates (Bucharest to Brașov)
 export const routes = [
@@ -262,21 +258,6 @@ const upcomingTrips = [
   },
 ];
 
-const experienceImages = [
-  "2.jpeg",
-  "3.jpeg",
-  "4.jpeg",
-  "5.jpeg",
-  "6.jpeg",
-  "7.jpeg",
-  "8.jpeg",
-  "9.jpeg",
-  "10.jpeg",
-  "11.jpeg",
-  "12.jpeg",
-  "13.jpeg",
-].map((img) => `/experience/${img}`);
-
 export default function ExcursionsPageContent() {
   return (
     <>
@@ -380,49 +361,13 @@ export default function ExcursionsPageContent() {
       <section className="bg-muted/30 py-20">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
-              Experiențe Memorabile
-            </h2>
-            <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
-              Vezi un rezumat din aventurile noastre recente
-            </p>
-          </motion.div>
-
-          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="mx-auto max-w-4xl"
           >
-            <Carousel>
-              <CarouselContent>
-                {experienceImages.map((src, idx) => (
-                  <CarouselItem key={idx}>
-                    <div className="moto-card overflow-hidden p-0">
-                      <div className="bg-muted flex aspect-video items-center justify-center">
-                        <Image
-                          src={src}
-                          alt={`Experiență ${idx + 1}`}
-                          className="h-full w-full object-cover"
-                          width={1000}
-                          height={800}
-                          priority={idx === 0}
-                        />
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              {/*<CarouselPrevious />*/}
-              {/*<CarouselNext />*/}
-            </Carousel>
+            <ImageCarousel />
             <div className="mt-4 text-center">
               <span className="bg-primary text-primary-foreground inline-block rounded px-4 py-2 text-base font-semibold">
                 Turul Transalpina & Transfăgărășan Tour Sep 2025
@@ -487,11 +432,11 @@ export default function ExcursionsPageContent() {
               },
               {
                 number: "25K+",
-                label: "Kilometri Parcurși",
+                label: "Kilometri Parcurși Anual",
                 icon: <Star className="h-8 w-8" />,
               },
               {
-                number: "150+",
+                number: "300+",
                 label: "Participări",
                 icon: <Users className="h-8 w-8" />,
               },

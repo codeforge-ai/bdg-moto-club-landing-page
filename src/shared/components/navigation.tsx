@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Facebook, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import clubLogo from "@/shared/assets/logo.png";
@@ -68,6 +68,33 @@ export function Navigation() {
                 )}
               </Link>
             ))}
+            {/* Social Links Desktop */}
+            <div className="ml-4 flex items-center space-x-4">
+              <a
+                href="https://www.facebook.com/share/17PjMBb7mz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="hover:text-primary"
+              >
+                <Facebook className="h-6 w-6" stroke="black" fill="black" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@bdgmotorclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="hover:text-primary"
+              >
+                <Image
+                  src="/tiktok.svg"
+                  alt="TikTok"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 text-current invert filter dark:invert-0"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,6 +123,33 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            {/* Social Links Mobile */}
+            <div className="mt-4 flex items-center space-x-4 px-4">
+              <a
+                href="https://www.facebook.com/share/17PjMBb7mz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="hover:text-primary"
+              >
+                <Facebook className="h-6 w-6" stroke="black" fill="black" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@bdgmotorclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="hover:text-primary"
+              >
+                <Image
+                  src="/tiktok.svg"
+                  alt="TikTok"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 text-current invert filter dark:invert-0"
+                />
+              </a>
+            </div>
           </div>
         )}
       </div>

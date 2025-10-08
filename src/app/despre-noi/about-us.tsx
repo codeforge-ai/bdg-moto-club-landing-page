@@ -77,7 +77,7 @@ export default function AboutUsPageContent() {
                   într-una dintre cele mai active comunități moto din regiune.
                 </p>
                 <p>
-                  Astăzi, numărăm peste 150 de membri activi, de la începători
+                  Astăzi, numărăm peste 300 de membri activi, de la începători
                   până la motocicliști experimentați, toți uniți de aceeași
                   pasiune pentru aventură și libertatea pe care o oferă
                   motocicleta.
@@ -108,7 +108,7 @@ export default function AboutUsPageContent() {
                 />
               </div>
               <div className="bg-primary text-primary-foreground absolute right-4 bottom-4 max-w-[90%] overflow-hidden rounded-xl px-6 py-4 text-ellipsis whitespace-nowrap shadow-lg md:max-w-[60%] lg:max-w-[50%]">
-                <p className="text-2xl font-bold">150+</p>
+                <p className="text-2xl font-bold">300+</p>
                 <p className="text-sm">Membri Activi</p>
               </div>
             </motion.div>
@@ -162,10 +162,10 @@ export default function AboutUsPageContent() {
         <div className="container mx-auto px-4">
           <div className="grid gap-8 text-center md:grid-cols-4">
             {[
-              { number: "300", label: "Membri" },
+              { number: "300+", label: "Membri" },
               { number: "50+", label: "Excursii Organizate Anual" },
               { number: "10", label: "Ani de Experiență" },
-              { number: "25K+", label: "Kilometri Parcurși" },
+              { number: "25K+", label: "Kilometri Parcurși Anual" },
             ].map((stat, index) => (
               <motion.div
                 key={index}

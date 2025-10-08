@@ -57,7 +57,7 @@ export default function ContactUsPageContent() {
   return (
     <>
       <section
-        className="from-background via-primary/5 to-background relative h-screen bg-linear-to-br bg-cover bg-center"
+        className="from-background via-primary/5 to-background relative h-screen bg-linear-to-br bg-cover bg-right md:bg-center"
         style={{ backgroundImage: `url('${heroImage.src}')` }}
       >
         <div className="absolute inset-0 bg-black/50" />
