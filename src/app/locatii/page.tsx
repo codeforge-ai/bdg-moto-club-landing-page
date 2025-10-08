@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import LocationPageClientWrapper from "@/app/locatii/location-client-wrapper";
 
 export const metadata: Metadata = {
-  title: "Locații | BDG - Club Moto",
+  title: "Locații | BDG MC",
   description:
     "Găsește sediul Club Moto, programul, datele de contact și informații despre cum să ajungi la noi. Descoperă locația centrală și facilitățile pentru membrii clubului.",
   keywords:
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
       "Excursii moto, Evenimente moto, Înscriere membri, Service moto, Detailing moto, Piese și accesorii moto, Comunitate moto, Locații club moto, Suport motocicliști",
   },
   openGraph: {
-    title: "BDG Moto Club - Aventură, Comunitate, Servicii Moto | România",
+    title: "BDG MC - Aventură, Comunitate, Servicii Moto | România",
     description:
       "Club Moto dedicat pasionaților de motociclete din România. Excursii organizate, evenimente, înscriere membri, locații, servicii premium moto, comunitate activă și suport pentru motocicliști.",
     type: "website",
     locale: "ro_RO",
-    siteName: "BDG Moto Club",
+    siteName: "BDG MC",
   },
 };
 

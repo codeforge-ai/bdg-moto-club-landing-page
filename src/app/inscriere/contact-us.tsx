@@ -69,7 +69,7 @@ export default function ContactUsPageContent() {
             className="max-w-3xl"
           >
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
-              Alătură-te <span className="text-blue-300">Club Moto</span>
+              Alătură-te <span className="text-blue-300">BDG MC</span>
             </h1>
             <p className="text-xl text-white/90">
               Începe-ți aventura pe două roți alături de cea mai activă

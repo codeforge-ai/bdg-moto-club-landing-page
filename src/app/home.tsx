@@ -6,7 +6,7 @@ import { ArrowRight, MapPin, Calendar, Users } from "lucide-react";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
 
 import Image from "next/image";
-import clubLogo from "@/shared/assets/logo.png";
+import clubLogo from "@/shared/assets/logo-w.png";
 
 export default function HomePageContent() {
   return (
@@ -23,12 +23,12 @@ export default function HomePageContent() {
             transition={{ duration: 1, delay: 0.3 }}
             className="py-4"
           >
-            <div className="mx-auto mb-6 flex h-40 w-40 items-center justify-center rounded-full bg-gray-300 shadow-lg">
+            <div className="mx-auto mb-6 flex h-40 w-40 items-center justify-center rounded-full shadow-lg">
               <Image
                 src={clubLogo.src}
                 alt="Club Moto Logo"
                 className="hero-logo"
-                width={120}
+                width={160}
                 height={120}
               />
             </div>
@@ -75,8 +75,7 @@ export default function HomePageContent() {
             className="mb-16 text-center"
           >
             <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
-              De ce să te alături{" "}
-              <span className="text-primary">Club Moto?</span>
+              De ce să te alături <span className="text-primary">BDG MC?</span>
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
               Descoperă aventurile pe două roți alături de o comunitate

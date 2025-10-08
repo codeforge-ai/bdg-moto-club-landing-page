@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ContactUsPageContent from "@/app/inscriere/contact-us";
 
 export const metadata: Metadata = {
-  title: "Inscriere | BDG - Club Moto",
+  title: "Inscriere | BDG - MC",
   description:
     "Completează formularul de înscriere și devino membru al Club Moto. Beneficiază de excursii, evenimente, suport și o comunitate activă de motocicliști.",
   keywords:

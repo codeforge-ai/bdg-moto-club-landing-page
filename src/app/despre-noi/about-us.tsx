@@ -71,10 +71,10 @@ export default function AboutUsPageContent() {
               </h2>
               <div className="text-muted-foreground space-y-6 text-lg">
                 <p>
-                  Club Moto a fost înființat în 2015 de un grup de pasionați
-                  care și-au dorit să exploreze frumusețile țării pe două roți.
-                  Ce a început ca o mică grupare de prieteni s-a transformat
-                  într-una dintre cele mai active comunități moto din regiune.
+                  BDG MC a fost înființat în 2015 de un grup de pasionați care
+                  și-au dorit să exploreze frumusețile țării pe două roți. Ce a
+                  început ca o mică grupare de prieteni s-a transformat într-una
+                  dintre cele mai active comunități moto din regiune.
                 </p>
                 <p>
                   Astăzi, numărăm peste 300 de membri activi, de la începători
@@ -100,7 +100,7 @@ export default function AboutUsPageContent() {
               <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src={clubMembers.src}
-                  alt="Membrii Club Moto"
+                  alt="Membrii BDG MC"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   width={800}
                   height={600}

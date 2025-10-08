@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Facebook, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import clubLogo from "@/shared/assets/logo.png";
@@ -38,7 +38,7 @@ export function Navigation() {
               className="h-full w-full max-w-[45px] object-contain"
               priority
             />
-            <div className="hidden sm:block">
+            <div className="hidden lg:block">
               <h1 className="text-foreground text-2xl font-bold">BDG MC</h1>
               <p className="text-muted-foreground text-xs">
                 Despre pasiunea pentru moto
@@ -68,7 +68,7 @@ export function Navigation() {
                 )}
               </Link>
             ))}
-            {/* Social Links Desktop */}
+
             <div className="ml-4 flex items-center space-x-4">
               <a
                 href="https://www.facebook.com/share/17PjMBb7mz"
@@ -77,7 +77,13 @@ export function Navigation() {
                 aria-label="Facebook"
                 className="hover:text-primary"
               >
-                <Facebook className="h-6 w-6" stroke="black" fill="black" />
+                <Image
+                  src="/facebook.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                  className="h-[24px] w-[24px]"
+                />
               </a>
               <a
                 href="https://www.tiktok.com/@bdgmotorclub"
@@ -91,7 +97,22 @@ export function Navigation() {
                   alt="TikTok"
                   width={24}
                   height={24}
-                  className="h-6 w-6 text-current invert filter dark:invert-0"
+                  className="h-[24px] w-[24px]"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/bdgmotorclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="hover:text-primary"
+              >
+                <Image
+                  src="/insta.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                  className="h-[24px] w-[24px]"
                 />
               </a>
             </div>
@@ -132,7 +153,13 @@ export function Navigation() {
                 aria-label="Facebook"
                 className="hover:text-primary"
               >
-                <Facebook className="h-6 w-6" stroke="black" fill="black" />
+                <Image
+                  src="/facebook.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                  className="h-[24px] w-[24px]"
+                />
               </a>
               <a
                 href="https://www.tiktok.com/@bdgmotorclub"
@@ -146,7 +173,22 @@ export function Navigation() {
                   alt="TikTok"
                   width={24}
                   height={24}
-                  className="h-6 w-6 text-current invert filter dark:invert-0"
+                  className="h-[24px] w-[24px]"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/bdgmotorclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="hover:text-primary"
+              >
+                <Image
+                  src="/insta.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                  className="h-[24px] w-[24px]"
                 />
               </a>
             </div>
