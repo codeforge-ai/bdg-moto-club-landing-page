@@ -88,7 +88,7 @@ export function Navigation() {
               />
             </a>
             <a
-              href="https://www.tiktok.com/@bdgmotorclub"
+              href="https://www.tiktok.com/@bdgmotorclub5"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
