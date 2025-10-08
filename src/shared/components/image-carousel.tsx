@@ -74,7 +74,7 @@ export function ImageCarousel() {
             </div>
           ))}
 
-          <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute inset-0 flex items-center justify-between p-4 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
             <Button
               variant="secondary"
               size="icon"
