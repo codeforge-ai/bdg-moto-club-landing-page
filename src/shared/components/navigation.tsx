@@ -68,54 +68,55 @@ export function Navigation() {
                 )}
               </Link>
             ))}
+          </div>
 
-            <div className="ml-4 flex items-center space-x-4">
-              <a
-                href="https://www.facebook.com/share/17PjMBb7mz"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/facebook.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-              <a
-                href="https://www.tiktok.com/@bdgmotorclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/tiktok.svg"
-                  alt="TikTok"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/bdgmotorclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/insta.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-            </div>
+          {/* Social Links - always visible */}
+          <div className="ml-4 flex items-center space-x-4">
+            <a
+              href="https://www.facebook.com/share/17PjMBb7mz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-primary"
+            >
+              <Image
+                src="/facebook.svg"
+                alt="Facebook"
+                width={24}
+                height={24}
+                className="h-[24px] w-[24px]"
+              />
+            </a>
+            <a
+              href="https://www.tiktok.com/@bdgmotorclub"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="hover:text-primary"
+            >
+              <Image
+                src="/tiktok.svg"
+                alt="TikTok"
+                width={24}
+                height={24}
+                className="h-[24px] w-[24px]"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/bdgmotorclub"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-primary"
+            >
+              <Image
+                src="/insta.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+                className="h-[24px] w-[24px]"
+              />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -144,54 +145,6 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            {/* Social Links Mobile */}
-            <div className="mt-4 flex items-center space-x-4 px-4">
-              <a
-                href="https://www.facebook.com/share/17PjMBb7mz"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/facebook.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-              <a
-                href="https://www.tiktok.com/@bdgmotorclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/tiktok.svg"
-                  alt="TikTok"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/bdgmotorclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="hover:text-primary"
-              >
-                <Image
-                  src="/insta.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="h-[24px] w-[24px]"
-                />
-              </a>
-            </div>
           </div>
         )}
       </div>
