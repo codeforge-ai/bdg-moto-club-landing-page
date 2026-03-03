@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin, Users, Clock, Star } from "lucide-react";
 import excursionRoute from "@/shared/assets/excursion-route.jpeg";
 import heroImage from "@/shared/assets/hero-motorcycle.jpeg";
+import nordkapp1 from "@/shared/assets/nordkapp-1.png";
+import nufar1 from "@/shared/assets/nufar/WhatsApp Image 2026-03-02 at 22.05.29.jpeg";
 import { ExcursionsMap } from "@/shared/components/excursions-map";
 import Image from "next/image";
 import { ImageCarousel } from "@/shared/components/image-carousel";
+import Link from "next/link";
 
 // Sample route coordinates (Bucharest to Brașov)
 export const routes = [
@@ -229,6 +232,28 @@ export const routes = [
 
 const upcomingTrips = [
   {
+    title: "Pe urmele Nufărului Auriu – Delta Dunării",
+    date: "30 Aprilie 2026",
+    duration: "4 zile",
+    difficulty: "Mediu",
+    participants: "Limitate",
+    image: nufar1,
+    description:
+      "Simbolul BDG. Există drumuri pe care mergi. Și există drumuri care te duc într-o stare.",
+    link: "/excursii/delta-dunarii",
+  },
+  {
+    title: "North to the Edge – Nordkapp Ride",
+    date: "Vara 2026",
+    duration: "14 zile",
+    difficulty: "Avansat",
+    participants: "Limitate",
+    image: nordkapp1,
+    description:
+      "O incursiune multiculturală spectaculoasă prin 12 țări din Europa de Est, Centrală și de Nord.",
+    link: "/excursii/nordkapp-ride",
+  },
+  {
     title: "Transfăgărășan Adventure",
     date: "15 Octombrie 2024",
     duration: "3 zile",
@@ -348,9 +373,15 @@ export default function ExcursionsPageContent() {
                   </div>
                 </div>
 
-                <button className="moto-button w-full" disabled>
-                  Înscrie-te
-                </button>
+                {"link" in trip && trip.link ? (
+                  <Link href={trip.link} className="w-full">
+                    <button className="moto-button w-full">Detalii</button>
+                  </Link>
+                ) : (
+                  <button className="moto-button w-full" disabled>
+                    Înscrie-te
+                  </button>
+                )}
               </motion.div>
             ))}
           </div>
